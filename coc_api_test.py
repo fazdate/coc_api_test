@@ -4,7 +4,13 @@ with open("credentials.txt") as file:
     adatok = file.readlines()
 cred = [x.strip() for x in adatok] 
 
+if len(cred) < 2:
+    print("Nem adtad meg a belépési adatokat")
 
+if len(cred) == 2 :
+    print("Nem adtál meg kereséshez szükséges adatokat")
+
+print()
 client = coc.login(cred[0], cred[1])
 player_tag = cred[2]
 clan_tag = cred[3]
